@@ -9,7 +9,7 @@
 ![Platform - Android](https://img.shields.io/badge/platform-android-red.svg)
 
 <p style="font-weight: bold;">Made with:</p>
-<a style="padding-right: 8px;" href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/>
+<a style="padding-right: 15px;" href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
 <br/>
 </div>
@@ -19,11 +19,13 @@
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 A tracer application for tracing devices.
+<br/>
 
 ## 🔽 Download
 
 You can download the most recent version of Trace Kid from
 [here](https://github.com/darksky6666/tracekid/releases/latest).  
+<br/>
 
 ## 🏗️ Build
 
