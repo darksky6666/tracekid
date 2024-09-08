@@ -25,11 +25,14 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Install Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Install dependencies
         run: npm install
 
-      - name: Install Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Expo Doctor Check
+        run: npx expo-doctor@latest
 
       - name: Build APK
         run: |

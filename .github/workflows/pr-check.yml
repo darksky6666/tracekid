@@ -1,0 +1,41 @@
+name: PR Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "zulu"
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Android SDK
+        uses: android-actions/setup-android@v3
+  
+      - name: Install dependencies
+        run: npm install
+  
+      - name: Expo Doctor Check
+        run: npx expo-doctor@latest
+
+      - name: Test Build APK
+        run: |
+          npx expo prebuild --platform android
+          cd android
+          ./gradlew assembleRelease
