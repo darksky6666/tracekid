@@ -68,7 +68,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag: ${{ github.ref }}
           title: ${{ steps.set_title.outputs.RELEASE_TITLE }}
 
       - name: Upload APK to Release
