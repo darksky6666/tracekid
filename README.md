@@ -27,10 +27,11 @@ You can download the most recent version of Trace Kid from
 
 ## 🏗️ Build
 
-1. **Install NodeJS and JDK 17:** <br/>
+1. **Install NodeJS, Android SDK and JDK 17:** <br/>
    
    [NodeJS](https://nodejs.org) <br />
-   [JDK](https://www.azul.com/downloads/?version=java-17-lts&os=windows&architecture=x86-64-bit&package=jdk#zulu)
+   [JDK](https://www.azul.com/downloads/?version=java-17-lts&os=windows&architecture=x86-64-bit&package=jdk#zulu) <br />
+   [Android SDK](https://docs.expo.dev/get-started/set-up-your-environment/?mode=development-build&buildEnv=local)
 
 2. **Navigate to project directory and install npm dependencies:**
    
