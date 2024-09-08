@@ -30,8 +30,6 @@ jobs:
 
       - name: Install Android SDK
         uses: android-actions/setup-android@v3
-        with:
-          api-level: 34
 
       - name: Build APK
         run: |
@@ -50,11 +48,19 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Download APK Artifact
         uses: actions/download-artifact@v4
         with:
           name: app-release.apk
           path: .
+    
+      - name: Set Release Title
+        id: set_title
+        run: echo "RELEASE_TITLE=Tracekid $(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+        shell: bash
 
       - name: Create Release
         id: create_release
@@ -62,10 +68,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tage: ${{ github.ref }}
-          title: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
+          tag: ${{ github.ref }}
+          title: ${{ steps.set_title.outputs.RELEASE_TITLE }}
 
       - name: Upload APK to Release
         uses: softprops/action-gh-release@v2
