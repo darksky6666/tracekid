@@ -56,26 +56,11 @@ jobs:
         with:
           name: app-release.apk
           path: .
-    
-      - name: Set Release Title
-        id: set_title
-        run: echo "RELEASE_TITLE=Tracekid $(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
-        shell: bash
-
-      - name: Create Release
-        id: create_release
-        uses: elgohr/Github-Release-Action@v5
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          title: ${{ steps.set_title.outputs.RELEASE_TITLE }}
 
       - name: Upload APK to Release
         uses: softprops/action-gh-release@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./app-release.apk
-          asset_name: app-release.apk
-          asset_content_type: application/vnd.android.package-archive
+          generate_release_notes: true
+          make_latest: "true"
+          tag_name: "release-$(date +'%Y-%m-%d %H:%M:%S')"
+          files: ./app-release.apk
