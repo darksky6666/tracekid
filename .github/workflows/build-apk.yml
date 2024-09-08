@@ -56,8 +56,13 @@ jobs:
         with:
           name: app-release.apk
           path: .
+      
+      - name: Changing timezone for tag name
+        uses: szenius/set-timezone@v2.0
+        with:
+          timezoneLinux: "Asia/Singapore"
 
-      - name: Create Tag
+      - name: Create Tag Name
         id: create_tag
         run: |
           TAG_NAME="release-$(date +'%Y%m%d%H%M%S')"
