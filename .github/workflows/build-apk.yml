@@ -35,7 +35,7 @@ jobs:
 
       - name: Build APK
         run: |
-          npx expo prebuild
+          npx expo prebuild --platform android
           cd android
           ./gradlew assembleRelease
 
