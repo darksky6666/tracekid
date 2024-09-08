@@ -43,12 +43,16 @@ You can download the most recent version of Trace Kid from
    ```
 
 3. **Run prebuild and build project:**
+   **Android Device:**
    ```sh
    npx expo prebuild
    cd android && ./gradlew assembleRelease
    ```
-   **Or use Expo Go:**
+   **Or use Expo Run:**
    ```sh
    npx expo run:android
    ```
-
+   **IOS Device:**
+   ```sh
+   npx expo start -g
+   ```
