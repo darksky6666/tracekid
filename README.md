@@ -6,7 +6,12 @@
 <br/><br/>
 
 ![Platform - iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
-![Platform - iOS](https://img.shields.io/badge/platform-android-red.svg)
+![Platform - Android](https://img.shields.io/badge/platform-android-red.svg)
+
+<p style="font-weight: bold;">Made with:</p>
+<a style="padding-right: 8px;" href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
+<br/>
 </div>
 
 ## 🗺️ Trace Kid
