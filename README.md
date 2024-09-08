@@ -8,7 +8,7 @@
 ![Platform - iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
 ![Platform - Android](https://img.shields.io/badge/platform-android-red.svg)
 
-<p style="font-weight: bold;">Made with:</p>
+<p style="font-weight: bold;">Built with ❤️</p>
 <a style="padding-right: 15px;" href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
 <br/>
@@ -49,6 +49,6 @@ You can download the most recent version of Trace Kid from
    ```
    **Or use Expo Go:**
    ```sh
-   npm run start
+   npx expo run:android
    ```
 
