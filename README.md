@@ -36,6 +36,8 @@ You can download the most recent version of Trace Kid from
 - [ ] Page 4 - Settings
 - [ ] Page 5 - Tracker Options
 
+<br/>
+
 ## 🏗️ Build
 
 1. **Install NodeJS, Android SDK and JDK 17:** <br/>
