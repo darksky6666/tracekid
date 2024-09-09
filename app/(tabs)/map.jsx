@@ -3,11 +3,13 @@ import { SafeAreaView, Text, View, Dimensions, Button } from 'react-native';
 import MapLibreGL from '@maplibre/maplibre-react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheet from '@gorhom/bottom-sheet';
-import MapComponent from '../components/MapComponent';
-import FloatingButton from '../components/FloatingButton';
-import BottomSheetContent from '../components/BottomSheetContent';
-import { checkLocationServices, handleOpenLocationSettings, getBounds } from '../components/LocationUtils';
+import MapComponent from '../../components/MapComponent';
+import FloatingButton from '../../components/FloatingButton';
+import BottomSheetContent from '../../components/BottomSheetContent';
+import AnimatedIcon from '../../components/AnimatedIcon';
+import { checkLocationServices, handleOpenLocationSettings, getBounds, getIntervalId } from '../../components/LocationUtils';
 import { Linking } from 'react-native';
+import { colors } from '../../constants/Colors';
 
 const MapScreen = () => {
     MapLibreGL.setAccessToken(null);
@@ -56,13 +58,21 @@ const MapScreen = () => {
         checkLocationServices(setLocation, setLocationEnabled, setErrorMsg);
     }, []);
 
+    useEffect(() => {
+		const intervalId = getIntervalId(setLocationEnabled, setErrorMsg, setLocation);
+
+		return () => clearInterval(intervalId);
+	}, []);
+
     if (!locationEnabled || !location) {
         return (
             <SafeAreaView className="flex-1 flex-col justify-center items-center space-y-6">
-                <Text>{errorMsg || 'Loading location...'}</Text>
+                <AnimatedIcon />
+                <Text className="font-bold text-lg">{errorMsg || 'Loading location...'}</Text>
                 {errorMsg && (
-                    <View className="w-2/3">
+                    <View className="w-2/3 pt-5">
                         <Button
+                            color={colors.darkPink}
                             title="Enable Location Services"
                             onPress={handleOpenLocationSettings}
                         />
@@ -71,6 +81,7 @@ const MapScreen = () => {
                 {errorMsg && (
                     <View className="w-2/3">
                         <Button
+                            color={colors.darkPink}
                             title="Open App Settings"
                             onPress={() => Linking.openSettings()}
                         />
