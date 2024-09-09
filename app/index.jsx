@@ -1,7 +1,7 @@
 import { router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback, useEffect, useState } from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -32,9 +32,12 @@ export default function App() {
 	}
 
 	return (
-		<View
-			onLayout={onLayoutRootView}
-			className="flex-1"
-		/>
+		<View onLayout={onLayoutRootView} className="flex-1">
+			<Image
+				className="flex-1 w-screen h-screen justify-center"
+				source={require('../assets/images/splash.png')}
+				resizeMode="cover"
+			/>
+		</View>
 	);
 }
