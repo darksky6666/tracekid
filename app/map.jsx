@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import {
 	TouchableHighlight,
 	SafeAreaView,
@@ -10,17 +10,18 @@ import {
 	Linking,
 	Platform,
 	Button,
-} from "react-native";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import Entypo from "@expo/vector-icons/Entypo";
-import MapLibreGL from "@maplibre/maplibre-react-native";
-import * as Location from "expo-location";
-import { router } from "expo-router";
-import BottomSheet from "@gorhom/bottom-sheet";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+} from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import Entypo from '@expo/vector-icons/Entypo';
+import MapLibreGL from '@maplibre/maplibre-react-native';
+import * as Location from 'expo-location';
+import { router } from 'expo-router';
+import BottomSheet from '@gorhom/bottom-sheet';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { useMemo } from 'react';
 
-const HomePage = () => {
+const MapScreen = () => {
 	MapLibreGL.setAccessToken(null);
 	MapLibreGL.setConnected(true);
 	const [location, setLocation] = useState(null);
@@ -29,20 +30,38 @@ const HomePage = () => {
 	const [locationEnabled, setLocationEnabled] = useState(false);
 	const [routeEnabled, setRouteEnabled] = useState(false);
 
-	const destination = {
-		latitude: 1.5040114001528468,
-		longitude: 103.38603342889529,
-	};
+	const destination = useMemo(
+		() => ({
+			latitude: 1.5040114001528468,
+			longitude: 103.38603342889529,
+		}),
+		[]
+	);
 
 	const bottomSheetRef = useRef(null);
-	const screenHeight = Dimensions.get("window").height;
+	const screenHeight = Dimensions.get('window').height;
 	const snapPoints = [screenHeight * 0.11, screenHeight * 0.38];
 
 	useEffect(() => {
+		const fetchRoute = async () => {
+			let start = location;
+			let end = destination;
+
+			const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=5b3ce3597851110001cf62487d40fd68518f4e30828030b10f58a51d&start=${start.longitude},${start.latitude}&end=${end.longitude},${end.latitude}`;
+			const response = await fetch(url);
+			const data = await response.json();
+
+			if (data && data.features && data.features.length > 0) {
+				const coordinates = data.features[0].geometry.coordinates.map(
+					(coord) => ({ latitude: coord[1], longitude: coord[0] })
+				);
+				setRouteCoordinates(coordinates);
+			}
+		};
 		if (location && routeEnabled) {
 			fetchRoute();
 		}
-	}, [routeEnabled]);
+	}, [destination, location, routeEnabled]);
 
 	useEffect(() => {
 		checkLocationServices();
@@ -50,8 +69,8 @@ const HomePage = () => {
 
 	const checkLocationServices = async () => {
 		let { status } = await Location.requestForegroundPermissionsAsync();
-		if (status !== "granted") {
-			setErrorMsg("Permission to access location was denied");
+		if (status !== 'granted') {
+			setErrorMsg('Permission to access location was denied');
 			return;
 		}
 
@@ -59,7 +78,7 @@ const HomePage = () => {
 		setLocationEnabled(locationServicesEnabled);
 
 		if (!locationServicesEnabled) {
-			setErrorMsg("Location services are disabled.");
+			setErrorMsg('Location services are disabled.');
 			return;
 		}
 
@@ -67,27 +86,11 @@ const HomePage = () => {
 		setLocation(coords);
 	};
 
-	const fetchRoute = async () => {
-		let start = location;
-		let end = destination;
-
-		const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=5b3ce3597851110001cf62487d40fd68518f4e30828030b10f58a51d&start=${start.longitude},${start.latitude}&end=${end.longitude},${end.latitude}`;
-		const response = await fetch(url);
-		const data = await response.json();
-
-		if (data && data.features && data.features.length > 0) {
-			const coordinates = data.features[0].geometry.coordinates.map(
-				(coord) => ({ latitude: coord[1], longitude: coord[0] })
-			);
-			setRouteCoordinates(coordinates);
-		}
-	};
-
 	const handleOpenLocationSettings = () => {
-		if (Platform.OS === "ios") {
-			Linking.openURL("App-Prefs:root=Privacy&path=LOCATION");
+		if (Platform.OS === 'ios') {
+			Linking.openURL('App-Prefs:root=Privacy&path=LOCATION');
 		} else {
-			Linking.sendIntent("android.settings.LOCATION_SOURCE_SETTINGS");
+			Linking.sendIntent('android.settings.LOCATION_SOURCE_SETTINGS');
 		}
 	};
 
@@ -96,7 +99,7 @@ const HomePage = () => {
 			<SafeAreaView className="flex-1 flex-col justify-center items-center space-y-6">
 				<MaterialIcons name="location-off" size={24} color="black" />
 				<View>
-					<Text>{errorMsg || "Loading location..."}</Text>
+					<Text>{errorMsg || 'Loading location...'}</Text>
 				</View>
 
 				{errorMsg && (
@@ -158,7 +161,7 @@ const HomePage = () => {
 				{/* Maps */}
 				<View className="flex-1">
 					<MapLibreGL.MapView
-						style={{ height: "100%", width: "100%" }}
+						style={{ height: '100%', width: '100%' }}
 						styleURL="https://raw.githubusercontent.com/go2garret/maps/main/src/assets/json/openStreetMap.json"
 						logoEnabled={false}
 						attributionEnabled={false}
@@ -189,7 +192,7 @@ const HomePage = () => {
 									<MapLibreGL.ShapeSource
 										id="routeSource"
 										shape={{
-											type: "LineString",
+											type: 'LineString',
 											coordinates: routeCoordinates.map((coord) => [
 												coord.longitude,
 												coord.latitude,
@@ -199,7 +202,7 @@ const HomePage = () => {
 										<MapLibreGL.LineLayer
 											id="routeLayer"
 											style={{
-												lineColor: "#FF0000",
+												lineColor: '#FF0000',
 												lineWidth: 5,
 											}}
 										/>
@@ -234,7 +237,7 @@ const HomePage = () => {
 						className="flex bg-white border-blue-300/50 border-2 w-11 h-11 rounded-md justify-center items-center"
 						underlayColor="#E4F3F9"
 						onPress={() => {
-							Alert.alert("Button Pressed", "You pressed the button!");
+							Alert.alert('Button Pressed', 'You pressed the button!');
 							Vibration.vibrate(50);
 						}}
 					>
@@ -242,10 +245,10 @@ const HomePage = () => {
 					</TouchableHighlight>
 					<TouchableHighlight
 						className="flex w-12 h-12 rounded-full justify-center items-center"
-						style={{ backgroundColor: "#F193B9" }}
+						style={{ backgroundColor: '#F193B9' }}
 						underlayColor="#F7A1C3"
 						onPress={() => {
-							Alert.alert("Button Pressed", "You pressed the button!");
+							Alert.alert('Button Pressed', 'You pressed the button!');
 							Vibration.vibrate(50);
 						}}
 					>
@@ -259,7 +262,7 @@ const HomePage = () => {
 						<View>
 							<Text
 								className="font-semibold text-3xl"
-								style={{ fontFamily: "Shift-Type-Basic" }}
+								style={{ fontFamily: 'Shift-Type-Basic' }}
 							>
 								My Device
 							</Text>
@@ -268,7 +271,7 @@ const HomePage = () => {
 						<View className="flex-1 flex-col space-y-5">
 							<TouchableHighlight
 								className="p-4 rounded-lg"
-								style={{ backgroundColor: "#F193B9" }}
+								style={{ backgroundColor: '#F193B9' }}
 								underlayColor="#F7A1C3"
 								onPress={() => {
 									setRouteEnabled(true);
@@ -284,8 +287,8 @@ const HomePage = () => {
 											<Text
 												className="font-semibold text-xl"
 												style={{
-													color: "#30558C",
-													fontFamily: "Shift-Type-Basic",
+													color: '#30558C',
+													fontFamily: 'Shift-Type-Basic',
 												}}
 											>
 												Jordon
@@ -295,8 +298,8 @@ const HomePage = () => {
 											<Text
 												className="font-semibold"
 												style={{
-													color: "white",
-													fontFamily: "Shift-Type-Basic",
+													color: 'white',
+													fontFamily: 'Shift-Type-Basic',
 												}}
 											>
 												Connected
@@ -307,7 +310,7 @@ const HomePage = () => {
 							</TouchableHighlight>
 							<TouchableHighlight
 								className="p-4 rounded-3xl"
-								style={{ backgroundColor: "#E4F3F9" }}
+								style={{ backgroundColor: '#E4F3F9' }}
 								underlayColor="#B9E7fA"
 								onPress={() => {
 									setRouteEnabled(false);
@@ -322,8 +325,8 @@ const HomePage = () => {
 										<Text
 											className="font-semibold text-xl"
 											style={{
-												color: "#30558C",
-												fontFamily: "Shift-Type-Basic",
+												color: '#30558C',
+												fontFamily: 'Shift-Type-Basic',
 											}}
 										>
 											Add Device
@@ -339,4 +342,4 @@ const HomePage = () => {
 	);
 };
 
-export default HomePage;
+export default MapScreen;
