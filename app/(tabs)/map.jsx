@@ -3,13 +3,13 @@ import { SafeAreaView, Text, View, Dimensions, Button } from 'react-native';
 import MapLibreGL from '@maplibre/maplibre-react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheet from '@gorhom/bottom-sheet';
-import MapComponent from '../components/MapComponent';
-import FloatingButton from '../components/FloatingButton';
-import BottomSheetContent from '../components/BottomSheetContent';
-import AnimatedIcon from '../components/AnimatedIcon';
-import { checkLocationServices, handleOpenLocationSettings, getBounds, getIntervalId } from '../components/LocationUtils';
+import MapComponent from '../../components/MapComponent';
+import FloatingButton from '../../components/FloatingButton';
+import BottomSheetContent from '../../components/BottomSheetContent';
+import AnimatedIcon from '../../components/AnimatedIcon';
+import { checkLocationServices, handleOpenLocationSettings, getBounds, getIntervalId } from '../../components/LocationUtils';
 import { Linking } from 'react-native';
-import { colors } from '../constants/Colors';
+import { colors } from '../../constants/Colors';
 
 const MapScreen = () => {
     MapLibreGL.setAccessToken(null);

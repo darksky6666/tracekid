@@ -29,9 +29,9 @@ You can download the most recent version of Trace Kid from
 
 ## 📝 ToDo
 
-- [ ] Bottom Navigation Bar
+- [x] Bottom Navigation Bar
 - [x] Page 1 - Splash screen
-- [ ] Page 2 - Map
+- [x] Page 2 - Map
 - [ ] Page 3 - Profile
 - [ ] Page 4 - Settings
 - [ ] Page 5 - Tracker Options
