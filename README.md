@@ -27,6 +27,15 @@ You can download the most recent version of Trace Kid from
 [here](https://github.com/darksky6666/tracekid/releases/latest).  
 <br/>
 
+## 📝 ToDo
+
+- [ ] Bottom Navigation Bar
+- [x] Page 1 - Splash screen
+- [ ] Page 2 - Map
+- [ ] Page 3 - Profile
+- [ ] Page 4 - Settings
+- [ ] Page 5 - Tracker Options
+
 ## 🏗️ Build
 
 1. **Install NodeJS, Android SDK and JDK 17:** <br/>
