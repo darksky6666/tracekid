@@ -15,13 +15,17 @@
 </div>
 
 ## 🗺️ Trace Kid
+
 [![Build](https://github.com/darksky6666/tracekid/actions/workflows/build-apk.yml/badge.svg)](https://github.com/darksky6666/tracekid/actions/workflows/build-apk.yml)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![CodeFactor](https://www.codefactor.io/repository/github/darksky6666/tracekid/badge)](https://www.codefactor.io/repository/github/darksky6666/tracekid)
 
 A tracer application for tracing devices.
 <br/>
 
 ## 🔽 Download
+
+[![Release](https://img.shields.io/github/release/darksky6666/tracekid.svg)](https://github.com/darksky6666/tracekid/releases/latest)
 
 You can download the most recent version of Trace Kid from
 [here](https://github.com/darksky6666/tracekid/releases/latest).  
@@ -49,7 +53,6 @@ You can download the most recent version of Trace Kid from
 2. **Navigate to project directory and install npm dependencies:**
    
    ```sh
-    cd tracekid
     npm install
    ```
 
