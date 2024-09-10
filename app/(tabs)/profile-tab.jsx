@@ -1,3 +1,3 @@
 export default function ProfileTab() {
-	return null;
+  return null;
 }

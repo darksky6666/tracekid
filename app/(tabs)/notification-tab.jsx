@@ -1,3 +1,3 @@
 export default function NotificationTab() {
-	return null;
+  return null;
 }
