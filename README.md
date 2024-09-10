@@ -33,12 +33,21 @@ You can download the most recent version of Trace Kid from
 
 ## 📝 ToDo
 
+
 - [x] Bottom Navigation Bar
 - [x] Page 1 - Splash screen
-- [x] Page 2 - Map
-- [ ] Page 3 - Profile
-- [ ] Page 4 - Settings
-- [ ] Page 5 - Tracker Options
+- [x] Page 2 - Home Page
+- [x] Page 3 - Menu
+- [ ] Page 4 - My Device
+- [ ] Page 5 - Help & Feedback
+- [ ] Page 6 - Shop
+- [ ] Page 7 - Notification
+- [ ] Page 8 - Profile
+- [ ] Page 9 - Add Device
+- [x] ~~Page 10 - Map~~
+- [ ] Page 11 - Bluetooth
+- [x] ~~Page 12 - Find My~~
+- [x] Page 13 - Setting
 
 <br/>
 
