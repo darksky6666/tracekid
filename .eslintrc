@@ -1,0 +1,11 @@
+{
+  "extends": "@react-native",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "ignorePatterns": [
+    "*.config.js"
+  ]
+}
