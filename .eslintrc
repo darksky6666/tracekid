@@ -1,5 +1,5 @@
 {
-  "extends": "@react-native",
+  "extends": ["plugin:jsx-a11y/recommended","@react-native"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
