@@ -1,11 +1,3 @@
 {
-  "extends": ["plugin:jsx-a11y/recommended","@react-native"],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "ignorePatterns": [
-    "*.config.js"
-  ]
+  "extends": ["@react-native"]
 }
