@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, Easing } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import { colors } from '../constants/Colors';
 
 const AnimatedIcon = () => {
 	const animatedValue = useRef(new Animated.Value(0)).current;
@@ -42,7 +43,7 @@ const AnimatedIcon = () => {
 
 	return (
 		<Animated.View style={{ transform: [{ translateX }, { translateY }] }}>
-			<FontAwesome5 name="search-location" size={60} color="black" />
+			<FontAwesome5 name="search-location" size={60} color={colors.textBtmSheet} />
 		</Animated.View>
 	);
 };

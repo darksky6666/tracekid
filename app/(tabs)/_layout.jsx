@@ -29,28 +29,24 @@ export default function TabLayout() {
 				})}
 			/>
 			<Tabs.Screen
-				name="notification-tab"
+				name="notification"
 				options={{
 					tabBarIcon: ({ color }) => <TabBarIcon name="bell-o" color={color} />,
 				}}
 				listeners={() => ({
 					tabPress: (e) => {
-						e.preventDefault();
 						Vibration.vibrate(50);
-						router.push('/notification');
 					},
 				})}
 			/>
 			<Tabs.Screen
-				name="profile-tab"
+				name="profile"
 				options={{
 					tabBarIcon: ({ color }) => <TabBarIcon name="user-o" color={color} />,
 				}}
 				listeners={() => ({
 					tabPress: (e) => {
-						e.preventDefault();
 						Vibration.vibrate(50);
-						router.push('/profile');
 					},
 				})}
 			/>
