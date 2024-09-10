@@ -1,15 +1,16 @@
 import React from 'react';
-import { TouchableHighlight, Alert, Vibration, View, StyleSheet } from 'react-native';
+import { TouchableHighlight, Vibration, View, StyleSheet } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { colors } from '../constants/Colors';
+import { router } from 'expo-router';
 
-const FloatingButton = () => (
+const MapFloatingButton = () => (
 	<View className="absolute top-0 left-0 right-0 flex-row justify-between p-4">
 		<TouchableHighlight
 			className="flex bg-white border-blue-300/50 border-2 w-11 h-11 rounded-md justify-center items-center"
 			underlayColor={colors.lightBlue}
 			onPress={() => {
-				Alert.alert('Button Pressed', 'You pressed the button!');
+				router.push('/setting');
 				Vibration.vibrate(50);
 			}}
 		>
@@ -20,7 +21,6 @@ const FloatingButton = () => (
 			style={styles.headphoneBtn}
 			underlayColor={colors.lightPink}
 			onPress={() => {
-				Alert.alert('Button Pressed', 'You pressed the button!');
 				Vibration.vibrate(50);
 			}}
 		>
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default FloatingButton;
+export default MapFloatingButton;

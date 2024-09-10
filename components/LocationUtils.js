@@ -1,5 +1,5 @@
-import * as Location from "expo-location";
-import { Linking, Platform } from "react-native";
+import * as Location from 'expo-location';
+import { Linking, Platform } from 'react-native';
 
 export const getBounds = (coordinates, destination, location) => {
   let minLat, maxLat, minLng, maxLng;
@@ -31,8 +31,8 @@ export const checkLocationServices = async (
   setErrorMsg,
 ) => {
   let { status } = await Location.requestForegroundPermissionsAsync();
-  if (status !== "granted") {
-    setErrorMsg("Permission to access location was denied");
+  if (status !== 'granted') {
+    setErrorMsg('Permission to access location was denied');
     return;
   }
 
@@ -40,7 +40,7 @@ export const checkLocationServices = async (
   setLocationEnabled(locationServicesEnabled);
 
   if (!locationServicesEnabled) {
-    setErrorMsg("Location services are disabled.");
+    setErrorMsg('Location services are disabled.');
     return;
   }
 
@@ -49,10 +49,10 @@ export const checkLocationServices = async (
 };
 
 export const handleOpenLocationSettings = () => {
-  if (Platform.OS === "ios") {
-    Linking.openURL("App-Prefs:root=Privacy&path=LOCATION");
+  if (Platform.OS === 'ios') {
+    Linking.openURL('App-Prefs:root=Privacy&path=LOCATION');
   } else {
-    Linking.sendIntent("android.settings.LOCATION_SOURCE_SETTINGS");
+    Linking.sendIntent('android.settings.LOCATION_SOURCE_SETTINGS');
   }
 };
 
@@ -69,15 +69,15 @@ export const getIntervalId = (setLocationEnabled, setErrorMsg, setLocation) => {
           setLocation(coords);
         } catch (error) {
           console.error(error);
-          setErrorMsg("Unable to fetch location.");
+          setErrorMsg('Unable to fetch location.');
         }
       } else {
         setLocation(null);
-        setErrorMsg("Location services are disabled.");
+        setErrorMsg('Location services are disabled.');
       }
     } catch (error) {
       console.error(error);
-      setErrorMsg("An unexpected error occurred.");
+      setErrorMsg('An unexpected error occurred.');
     }
   }, 5000);
 
