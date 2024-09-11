@@ -24,7 +24,13 @@ export default function Setting() {
   ];
 
   const menuSection2 = [
-    { text: 'Notification', onPress: () => Vibration.vibrate(50) },
+    {
+      text: 'Notification',
+      onPress: () => {
+        Vibration.vibrate(50);
+        router.push('/notification');
+      },
+    },
     {
       text: 'Ring',
       onPress: () => {
