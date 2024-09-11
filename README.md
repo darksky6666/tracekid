@@ -44,7 +44,7 @@ You can download the most recent version of Trace Kid from
 - [x] Page 4 - My Device
 - [ ] Page 5 - Help & Feedback
 - [ ] Page 6 - Shop
-- [ ] Page 7 - Notification
+- [x] Page 7 - Notification
 - [ ] Page 8 - Profile
 - [ ] Page 9 - Add Device
 - [x] ~~Page 10 - Map~~
