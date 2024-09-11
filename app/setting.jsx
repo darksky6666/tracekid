@@ -66,7 +66,6 @@ export default function Setting() {
             <TouchableOpacity
               onPress={() => {
                 Vibration.vibrate(50);
-                router.back();
               }}
             >
               <MaterialIcons

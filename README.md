@@ -9,8 +9,11 @@
 ![Platform - Android](https://img.shields.io/badge/platform-android-red.svg)
 
 <p style="font-weight: bold;">Built with ❤️</p>
-<a style="padding-right: 15px;" href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/>
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
+<a style="margin-right: 15px;" href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/>
+<a style="margin-right: 15px;" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
+<a style="margin-right: 15px;" href="https://zustand-demo.pmnd.rs/" target="_blank" rel="noreferrer">
+<img src="https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg" alt="zustand" width="40" height="40"> </a>
+<a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/>
 <br/>
 </div>
 
@@ -38,7 +41,7 @@ You can download the most recent version of Trace Kid from
 - [x] Page 1 - Splash screen
 - [x] Page 2 - Home Page
 - [x] Page 3 - Menu
-- [ ] Page 4 - My Device
+- [x] Page 4 - My Device
 - [ ] Page 5 - Help & Feedback
 - [ ] Page 6 - Shop
 - [ ] Page 7 - Notification
