@@ -13,4 +13,5 @@ export const colors = {
   darkPink: '#F193B9',
 
   navButtonBlue: '#89D2F6',
+  deviceMenuIconPink: '#F6BAD6',
 };

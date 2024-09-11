@@ -1,5 +1,5 @@
 import React from 'react';
-import { router, Tabs } from 'expo-router';
+import { Tabs } from 'expo-router';
 import TabBarIcon from '../../components/TabBarIcon';
 import { colors } from '../../constants/Colors';
 import { Vibration } from 'react-native';
@@ -14,9 +14,10 @@ export default function TabLayout() {
 				tabBarShowLabel: false,
 			}}
 			initialRouteName="map"
+			backBehavior="history"
 		>
 			<Tabs.Screen
-				name="map"
+				name="shop"
 				options={{
 					tabBarIcon: ({ color }) => (
 						<TabBarIcon name="shopping-basket" color={color} />
@@ -29,9 +30,9 @@ export default function TabLayout() {
 				})}
 			/>
 			<Tabs.Screen
-				name="notification"
+				name="map"
 				options={{
-					tabBarIcon: ({ color }) => <TabBarIcon name="bell-o" color={color} />,
+					tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
 				}}
 				listeners={() => ({
 					tabPress: (e) => {

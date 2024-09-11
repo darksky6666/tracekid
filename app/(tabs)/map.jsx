@@ -22,6 +22,7 @@ import {
   getIntervalId,
 } from '../../components/LocationUtils';
 import { colors } from '../../constants/Colors';
+import useRouteStore from '../../store/routeStore';
 
 const MapScreen = () => {
   MapLibreGL.setAccessToken(null);
@@ -31,7 +32,8 @@ const MapScreen = () => {
   const [errorMsg, setErrorMsg] = useState(null);
   const [routeCoordinates, setRouteCoordinates] = useState([]);
   const [locationEnabled, setLocationEnabled] = useState(false);
-  const [routeEnabled, setRouteEnabled] = useState(false);
+
+  const { routeEnabled, setRouteEnabled } = useRouteStore();
 
   const destination = useMemo(
     () => ({
