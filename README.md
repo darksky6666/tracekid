@@ -9,32 +9,11 @@
 ![Platform - Android](https://img.shields.io/badge/platform-android-red.svg)
 
 <p style="font-weight: bold;">Built with ❤️</p>
-
-<table style="border-collapse: collapse; border: none;">
-  <tr>
-    <td style="padding-right: 15px; border: none;">
-      <a href="https://reactnative.dev/" target="_blank" rel="noreferrer">
-        <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/>
-      </a>
-    </td>
-    <td style="padding-right: 15px; border: none;">
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
-      </a>
-    </td>
-    <td style="padding-right: 15px; border: none;">
-      <a href="https://zustand-demo.pmnd.rs/" target="_blank" rel="noreferrer">
-        <img src="https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg" alt="zustand" width="40" height="40"/>
-      </a>
-    </td>
-    <td style="border: none;">
-      <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer">
-        <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/>
-      </a>
-    </td>
-  </tr>
-</table>
-
+<a style="margin-right: 15px;" href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/>
+<a style="margin-right: 15px;" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
+<a style="margin-right: 15px;" href="https://zustand-demo.pmnd.rs/" target="_blank" rel="noreferrer">
+<img src="https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg" alt="zustand" width="40" height="40"> </a>
+<a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/>
 <br/>
 </div>
 
