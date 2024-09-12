@@ -37,8 +37,8 @@ const MapScreen = () => {
 
   const destination = useMemo(
     () => ({
-      latitude: 1.5040114001528468,
-      longitude: 103.38603342889529,
+      latitude: 1.5329437312323446,
+      longitude: 103.67787835942418,
     }),
     []
   );

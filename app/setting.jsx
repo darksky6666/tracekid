@@ -72,6 +72,7 @@ export default function Setting() {
             <TouchableOpacity
               onPress={() => {
                 Vibration.vibrate(50);
+                router.push('/helpchat');
               }}
             >
               <MaterialIcons
