@@ -2,6 +2,7 @@ import { router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback, useEffect, useState } from 'react';
 import { View, Image } from 'react-native';
+import { initDB } from '../store/database';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -13,6 +14,7 @@ export default function App() {
       console.log(
         "I'm a task that gets executed before splash screen disappears",
       );
+      await initDB();
       setAppIsReady(true);
     }
     prepare();

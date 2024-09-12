@@ -10,8 +10,8 @@ const MapFloatingButton = () => (
 			className="flex bg-white border-blue-300/50 border-2 w-11 h-11 rounded-md justify-center items-center"
 			underlayColor={colors.lightBlue}
 			onPress={() => {
-				router.push('/setting');
 				Vibration.vibrate(50);
+				router.push('/setting');
 			}}
 		>
 			<MaterialIcons name="menu" size={36} color={colors.lightBlueMenu} />
@@ -22,6 +22,7 @@ const MapFloatingButton = () => (
 			underlayColor={colors.lightPink}
 			onPress={() => {
 				Vibration.vibrate(50);
+				router.push('/helpchat');
 			}}
 		>
 			<MaterialIcons name="headphones" size={32} color="white" />
