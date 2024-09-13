@@ -1,21 +1,61 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Vibration } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Vibration,
+} from 'react-native';
 import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import { colors } from '../constants/Colors';
 
-const HeaderComponent = ({ title }) => {
+const HeaderComponent = ({
+  title,
+  handleThirdButton,
+  showThirdButton = false,
+  thirdButtonIcon = 'refresh',
+}) => {
   const router = useRouter();
 
   return (
-    <View style={styles.border} className="flex-row items-center space-x-4">
-      <TouchableOpacity onPress={() => {
-        Vibration.vibrate(50);
-        router.back();
-      }} className="mr-4">
-        <MaterialIcons name="chevron-left" size={30} color={colors.navButtonBlue} />
+    <View
+      style={styles.border}
+      className="flex-row items-center justify-between"
+    >
+      <TouchableOpacity
+        onPress={() => {
+          Vibration.vibrate(50);
+          router.back();
+        }}
+      >
+        <MaterialIcons
+          name="chevron-left"
+          size={30}
+          color={colors.navButtonBlue}
+        />
       </TouchableOpacity>
+
       <Text style={styles.text}>{title}</Text>
+
+      {showThirdButton ? (
+        <TouchableOpacity
+          onPress={() => {
+            Vibration.vibrate(50);
+            if (handleThirdButton) {
+              handleThirdButton();
+            }
+          }}
+        >
+          <MaterialIcons
+            name={thirdButtonIcon}
+            size={30}
+            color={colors.navButtonBlue}
+          />
+        </TouchableOpacity>
+      ) : (
+        <View className="p-4" />
+      )}
     </View>
   );
 };

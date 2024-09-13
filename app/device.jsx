@@ -6,12 +6,13 @@ import {
   SafeAreaView,
   Vibration,
   ScrollView,
+  Linking,
 } from 'react-native';
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons';
 import { Pressable } from 'react-native';
 import { colors } from '../constants/Colors';
 import BatteryIcon from '../components/BatteryIcon';
-import { deviceName } from '../constants/String';
+import { deviceName, phoneNumber } from '../constants/String';
 import DeviceMenuButton from '../components/DeviceMenuButton';
 import { router } from 'expo-router';
 import useRouteStore from '../store/routeStore';
@@ -32,8 +33,9 @@ export default function DeviceInfo() {
     {
       iconName: 'report',
       text: 'Report',
-      onPress: () => {
+      onPress: async () => {
         Vibration.vibrate(50);
+        await Linking.openURL(phoneNumber);
       },
     },
     {

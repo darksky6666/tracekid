@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Item 1",
+    "price": "RM 10.00",
+    "type": "Button"
+  },
+  {
+    "id": "2",
+    "name": "Item 2",
+    "price": "RM 15.00",
+    "type": "Button"
+  },
+  {
+    "id": "3",
+    "name": "Item 3",
+    "price": "RM 20.00",
+    "type": "Button"
+  },
+  {
+    "id": "4",
+    "name": "Item 4",
+    "price": "RM 25.00",
+    "type": "Keychain"
+  },
+  {
+    "id": "5",
+    "name": "Item 5",
+    "price": "RM 30.00",
+    "type": "Keychain"
+  },
+  {
+    "id": "6",
+    "name": "Item 6",
+    "price": "RM 35.00",
+    "type": "Keychain"
+  }
+]
