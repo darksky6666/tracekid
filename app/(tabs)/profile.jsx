@@ -14,6 +14,7 @@ import { colors } from '../../constants/Colors';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import ProfileButton from '../../components/ProfileButton';
 import { router } from 'expo-router';
+import { profileName } from '../../constants/String';
 
 export default function Profile() {
   const showAlert = () => {
@@ -45,7 +46,7 @@ export default function Profile() {
           <FontAwesome name="user-circle" size={75} color={colors.lightBlueBtmSheet} />
         </View>
         <View style={styles.infoContainer}>
-          <Text style={styles.name}>Jessy Lim</Text>
+          <Text style={styles.name}>{profileName}</Text>
           <TouchableHighlight
             style={styles.buttonWrapper}
             underlayColor={colors.lightBlue}
