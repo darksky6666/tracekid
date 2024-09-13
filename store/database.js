@@ -38,11 +38,11 @@ export const initDB = async () => {
   `);
 
   // Initialize the database with a default customer and agent
-  await initDefaultUsers();
+  await initData();
 };
 
 // Function to initialize the database with default users
-const initDefaultUsers = async () => {
+const initData = async () => {
   const existingUsers = await db.getAllAsync(
     'SELECT * FROM Users WHERE id IN (1, 2)',
   );
@@ -56,6 +56,14 @@ const initDefaultUsers = async () => {
     await db.runAsync(
       "INSERT INTO Users (id, name, role) VALUES (2, 'Default Agent', 'agent')",
     );
+  }
+
+  const existingChat = await db.getAllAsync(
+    'SELECT * FROM Messages WHERE chat_id = ?',
+    [1],
+  );
+  if (existingChat.length === 0) {
+    await addMessage(1, 2, 'Hi there, how can I help you?');
   }
 };
 

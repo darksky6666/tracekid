@@ -8,12 +8,36 @@ import {
   Vibration,
   BackHandler,
   Platform,
+  Alert,
 } from 'react-native';
 import { colors } from '../../constants/Colors';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import ProfileButton from '../../components/ProfileButton';
+import { router } from 'expo-router';
 
 export default function Profile() {
+  const showAlert = () => {
+    Alert.alert(
+      'Are you sure?',
+      "Press 'OK' to close the application",
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'OK',
+          onPress: () => {
+            if (Platform.OS === 'android') {
+              BackHandler.exitApp();
+            }
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={[styles.border, styles.row]}>
@@ -39,16 +63,17 @@ export default function Profile() {
       {/* Bottom layer */}
       <View className="flex-[4_4_0%] flex-col p-5">
         <ProfileButton
-          onPress={() => Vibration.vibrate(50)}
+          onPress={() => {
+            Vibration.vibrate(50);
+            router.push('/helpchat');
+          }}
           icon="help-outline"
           text="Help and Feedback"
         />
         <ProfileButton
           onPress={() => {
             Vibration.vibrate(50);
-            if (Platform.OS === 'android') {
-              BackHandler.exitApp();
-            }
+            showAlert();
           }}
           icon="power-settings-new"
           text="Shut Down"
