@@ -51,6 +51,7 @@ You can download the most recent version of Trace Kid from
 - [ ] Page 11 - Bluetooth
 - [x] ~~Page 12 - Find My~~
 - [x] Page 13 - Setting
+- [ ] Page 14 - About Us
 
 <br/>
 
