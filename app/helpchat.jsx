@@ -16,7 +16,7 @@ import {
   addMessage,
   deleteChatMessages,
 } from '../store/database';
-import ChatHeaderComponent from '../components/ChatHeaderComponent';
+import HeaderComponent from '../components/HeaderComponent';
 import { colors } from '../constants/Colors';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -111,9 +111,10 @@ const HelpAndSupport = () => {
         className="flex-1 px-2 pt-1"
       >
         {/* Chat Header */}
-        <ChatHeaderComponent
+        <HeaderComponent
           title="Help and Feedback"
-          handleNewChat={handleNewChat}
+          showThirdButton={true}
+          handleThirdButton={handleNewChat}
         />
 
         {/* Chat Body */}
