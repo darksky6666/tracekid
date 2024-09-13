@@ -14,6 +14,7 @@ const HeaderComponent = ({
   title,
   handleThirdButton,
   showThirdButton = false,
+  thirdButtonIcon = 'refresh',
 }) => {
   const router = useRouter();
 
@@ -47,7 +48,7 @@ const HeaderComponent = ({
           }}
         >
           <MaterialIcons
-            name="refresh"
+            name={thirdButtonIcon}
             size={30}
             color={colors.navButtonBlue}
           />

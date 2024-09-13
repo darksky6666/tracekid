@@ -43,7 +43,7 @@ You can download the most recent version of Trace Kid from
 - [x] Page 3 - Menu
 - [x] Page 4 - My Device
 - [x] Page 5 - Help & Feedback
-- [ ] Page 6 - Shop
+- [x] Page 6 - Shop
 - [x] Page 7 - Notification
 - [ ] Page 8 - Profile
 - [ ] Page 9 - Add Device
