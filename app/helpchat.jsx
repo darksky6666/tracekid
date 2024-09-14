@@ -19,17 +19,11 @@ import {
 import HeaderComponent from '../components/HeaderComponent';
 import { colors } from '../constants/Colors';
 import { MaterialIcons } from '@expo/vector-icons';
-
-// Placeholder images for user and agent profile pictures
-const agentProfilePic = 'https://picsum.photos/200';
-// const userProfilePic = 'https://picsum.photos/200';
+import { agentId, agentProfilePic, chatId, userId } from '../constants/String';
 
 const HelpAndSupport = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
-  const chatId = 1; // Assume chat ID is always 1
-  const userId = 1; // Assume the user's ID
-  const agentId = 2; // Assume the agent's ID
 
   const flatListRef = useRef(null);
 

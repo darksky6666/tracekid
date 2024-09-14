@@ -11,7 +11,7 @@ import HeaderComponent from '../components/HeaderComponent';
 import { ScrollView } from 'react-native';
 import { versionInfo } from '../constants/String';
 import { colors } from '../constants/Colors';
-import AboutButton from '../components/AboutButton';
+import LightBlueButton from '../components/LightBlueButton';
 import { clearAppData } from '../utils/ClearAppDataUtils';
 import useRouteStore from '../store/routeStore';
 
@@ -38,7 +38,7 @@ export default function AboutUs() {
     );
   };
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 px-2 pt-1">
       {/* Header Component */}
       <HeaderComponent title="About Us" />
       <ScrollView contentContainerStyle={styles.container}>
@@ -52,14 +52,14 @@ export default function AboutUs() {
           <Text style={styles.versionText}>{versionInfo}</Text>
         </View>
         {/* Button */}
-        <View className="flex-1 flex-col justify-start items-center">
-          <AboutButton
+        <View className="flex-1 flex-col justify-start items-center mx-7">
+          <LightBlueButton
             title="Clear Cache"
             onPress={() => {
               showAlert();
             }}
           />
-          <AboutButton
+          <LightBlueButton
             title="Update"
             onPress={() => {
               Alert.alert(

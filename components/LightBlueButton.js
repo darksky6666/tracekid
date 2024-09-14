@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Text, Vibration, StyleSheet } from 'react-native';
 import { colors } from '../constants/Colors';
 
-const AboutButton = ({ onPress, title }) => {
+const LightBlueButton = ({ onPress, title }) => {
   return (
     <TouchableOpacity
       style={styles.button}
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightBlue,
     padding: 16,
     borderRadius: 20,
-    width: '75%',
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 30,
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AboutButton;
+export default LightBlueButton;

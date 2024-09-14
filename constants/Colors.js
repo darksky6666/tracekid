@@ -1,3 +1,4 @@
+// 可以把color code换成你喜欢的 但我也不懂哪个是哪个了
 export const colors = {
   blue: '#30558C',
   lightBlue: '#E4F3F9',

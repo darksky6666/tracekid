@@ -74,6 +74,7 @@ export default function Profile() {
             underlayColor={colors.lightBlue}
             onPress={() => {
               Vibration.vibrate(50);
+              router.push('/edit-profile');
             }}
           >
             <View style={styles.button}>
