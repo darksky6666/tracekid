@@ -15,7 +15,7 @@ import {
   getMessagesByChatId,
   addMessage,
   deleteChatMessages,
-} from '../store/database';
+} from '../services/database';
 import HeaderComponent from '../components/HeaderComponent';
 import { colors } from '../constants/Colors';
 import { MaterialIcons } from '@expo/vector-icons';

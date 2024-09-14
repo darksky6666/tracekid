@@ -49,12 +49,12 @@ const initData = async () => {
   if (existingUsers.length === 0) {
     // Insert default customer (id = 1)
     await db.runAsync(
-      "INSERT INTO Users (id, name, role) VALUES (1, 'Default Customer', 'customer')",
+      "INSERT INTO Users (id, name, role) VALUES (1, 'Jessy Lim', 'customer')",
     );
 
     // Insert default agent (id = 2)
     await db.runAsync(
-      "INSERT INTO Users (id, name, role) VALUES (2, 'Default Agent', 'agent')",
+      "INSERT INTO Users (id, name, role) VALUES (2, 'Agent 1', 'agent')",
     );
   }
 
@@ -137,3 +137,47 @@ export const deleteChatMessages = async (chat_id) => {
   await db.runAsync('DELETE FROM Messages WHERE chat_id = ?', chat_id);
   console.log(`Deleted messages for chat ID: ${chat_id}`);
 };
+
+// Function to get user info by user id
+export const getUserById = async (user_id) => {
+  await initDB();
+
+  try {
+    const user = await db.getFirstAsync('SELECT * FROM Users WHERE id = ?', [user_id]);
+    return user;
+  } catch (error) {
+    console.error('Error fetching user:', error);
+  }
+};
+
+// Function to update a user's name
+export const updateUserName = async (user_id, new_name) => {
+  await initDB();
+
+  try {
+    await db.runAsync(
+      'UPDATE Users SET name = ? WHERE id = ?',
+      new_name,
+      user_id,
+    );
+    console.log(`Updated user ID ${user_id} with new name: ${new_name}`);
+  } catch (error) {
+    console.error('Error updating user name:', error);
+  }
+};
+
+// Function to drop all tables (to reset the database)
+export const dropTables = async () => {
+  await initDB(); // Ensure the DB is initialized before trying to drop tables
+
+  try {
+    await db.runAsync('DROP TABLE IF EXISTS Messages');
+    await db.runAsync('DROP TABLE IF EXISTS Chats');
+    await db.runAsync('DROP TABLE IF EXISTS Users');
+
+    console.log('All tables dropped successfully');
+  } catch (error) {
+    console.error('Error dropping tables:', error);
+  }
+};
+
