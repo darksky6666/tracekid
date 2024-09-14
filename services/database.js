@@ -143,7 +143,9 @@ export const getUserById = async (user_id) => {
   await initDB();
 
   try {
-    const user = await db.getFirstAsync('SELECT * FROM Users WHERE id = ?', [user_id]);
+    const user = await db.getFirstAsync('SELECT * FROM Users WHERE id = ?', [
+      user_id,
+    ]);
     return user;
   } catch (error) {
     console.error('Error fetching user:', error);
@@ -180,4 +182,3 @@ export const dropTables = async () => {
     console.error('Error dropping tables:', error);
   }
 };
-

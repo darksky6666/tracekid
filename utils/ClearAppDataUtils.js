@@ -3,7 +3,6 @@ import { Alert } from 'react-native';
 import RNRestart from 'react-native-restart';
 import { dropTables } from '../services/database';
 
-
 export const clearAppData = async (reset) => {
   const dbFilePath = `${FileSystem.documentDirectory}/SQLite/tracekid.db`;
   try {
