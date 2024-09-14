@@ -20,7 +20,7 @@ import {
   handleOpenLocationSettings,
   getBounds,
   getIntervalId,
-} from '../../components/LocationUtils';
+} from '../../utils/LocationUtils';
 import { colors } from '../../constants/Colors';
 import useRouteStore from '../../store/routeStore';
 

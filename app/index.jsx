@@ -2,7 +2,7 @@ import { router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback, useEffect, useState } from 'react';
 import { View, Image } from 'react-native';
-import { initDB } from '../store/database';
+import { initDB } from '../services/database';
 
 SplashScreen.preventAutoHideAsync();
 

@@ -1,3 +1,4 @@
+// 危险危险危险~ 别碰它会痛
 export const imageMap = {
   1: require('../assets/images/items/item1.png'),
   2: require('../assets/images/items/item2.png'),

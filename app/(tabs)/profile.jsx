@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   StyleSheet,
@@ -14,9 +14,27 @@ import { colors } from '../../constants/Colors';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import ProfileButton from '../../components/ProfileButton';
 import { router } from 'expo-router';
-import { profileName } from '../../constants/String';
+import { getUserById } from '../../services/database';
+import { userId } from '../../constants/String';
 
 export default function Profile() {
+  const [profileName, setProfileName] = useState('');
+
+  useEffect(() => {
+    // Fetch the profile name from the database
+    const fetchProfile = async () => {
+      try {
+        const user = await getUserById(userId);
+        setProfileName(user?.name || 'Guest');
+      } catch (error) {
+        console.error('Error fetching profile name:', error);
+        setProfileName('Guest');
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
   const showAlert = () => {
     Alert.alert(
       'Are you sure?',
@@ -35,7 +53,7 @@ export default function Profile() {
           },
         },
       ],
-      { cancelable: false }
+      { cancelable: false },
     );
   };
 
@@ -43,7 +61,11 @@ export default function Profile() {
     <SafeAreaView style={styles.container}>
       <View style={[styles.border, styles.row]}>
         <View style={styles.iconContainer}>
-          <FontAwesome name="user-circle" size={75} color={colors.lightBlueBtmSheet} />
+          <FontAwesome
+            name="user-circle"
+            size={75}
+            color={colors.lightBlueBtmSheet}
+          />
         </View>
         <View style={styles.infoContainer}>
           <Text style={styles.name}>{profileName}</Text>
@@ -52,6 +74,7 @@ export default function Profile() {
             underlayColor={colors.lightBlue}
             onPress={() => {
               Vibration.vibrate(50);
+              router.push('/edit-profile');
             }}
           >
             <View style={styles.button}>
@@ -80,7 +103,10 @@ export default function Profile() {
           text="Shut Down"
         />
         <ProfileButton
-          onPress={() => Vibration.vibrate(50)}
+          onPress={() => {
+            Vibration.vibrate(50);
+            router.push('/about');
+          }}
           icon="info-outline"
           text="About Us"
         />

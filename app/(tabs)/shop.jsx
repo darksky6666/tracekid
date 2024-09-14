@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
   Vibration,
+  SafeAreaView,
 } from 'react-native';
 import ItemCard from '../../components/ItemCard';
 import ItemDetailModal from '../../components/ItemDetailModal';
@@ -75,8 +76,10 @@ const ShopPage = () => {
   const itemTypes = ['All', ...new Set(items.map((item) => item.type))];
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <View className="px-2 pt-1">
       <HeaderComponent title="Shop" />
+      </View>
       <View style={styles.searchAndCartContainer}>
         <TextInput
           clearButtonMode="always"
@@ -131,7 +134,7 @@ const ShopPage = () => {
           onBuyNow={handleBuyNow}
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -185,7 +188,6 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     margin: 10,
-    paddingTop: 5,
     paddingBottom: 30,
     justifyContent: 'center',
     alignContent: 'center',

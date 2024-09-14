@@ -45,13 +45,13 @@ You can download the most recent version of Trace Kid from
 - [x] Page 5 - Help & Feedback
 - [x] Page 6 - Shop
 - [x] Page 7 - Notification
-- [ ] Page 8 - Profile
-- [ ] Page 9 - Add Device
+- [x] Page 8 - Edit Profile
+- [x] ~~Page 9 - Add Device~~
 - [x] ~~Page 10 - Map~~
-- [ ] Page 11 - Bluetooth
+- [x] ~~Page 11 - Bluetooth~~
 - [x] ~~Page 12 - Find My~~
 - [x] Page 13 - Setting
-- [ ] Page 14 - About Us
+- [x] Page 14 - About Us
 
 <br/>
 
