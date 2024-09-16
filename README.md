@@ -34,27 +34,6 @@ You can download the most recent version of Trace Kid from
 [here](https://github.com/darksky6666/tracekid/releases/latest).  
 <br/>
 
-## 📝 ToDo
-
-
-- [x] Bottom Navigation Bar
-- [x] Page 1 - Splash screen
-- [x] Page 2 - Home Page
-- [x] Page 3 - Menu
-- [x] Page 4 - My Device
-- [x] Page 5 - Help & Feedback
-- [x] Page 6 - Shop
-- [x] Page 7 - Notification
-- [x] Page 8 - Edit Profile
-- [x] ~~Page 9 - Add Device~~
-- [x] ~~Page 10 - Map~~
-- [x] ~~Page 11 - Bluetooth~~
-- [x] ~~Page 12 - Find My~~
-- [x] Page 13 - Setting
-- [x] Page 14 - About Us
-
-<br/>
-
 ## 🏗️ Build
 
 1. **Install NodeJS, Android SDK and JDK 17:** <br/>
@@ -73,7 +52,8 @@ You can download the most recent version of Trace Kid from
    **Android Device:**
    ```sh
    npx expo prebuild
-   cd android && ./gradlew assembleRelease
+   cd android
+   ./gradlew assembleRelease
    ```
    **Or use Expo Run:**
    ```sh
